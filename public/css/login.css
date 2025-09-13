@@ -1,0 +1,219 @@
+html, body {
+            height: 100%;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        body {
+            background: #f3fff6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-bg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #42DB42;
+            border-radius: 50%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .autosafe-logo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 48px;
+            margin-bottom: 12px;
+            height: 100px;
+        }
+        .autosafe-logo img {
+            position: relative;
+            z-index: 1;
+        }
+        .autosafe-title {
+            text-align: center;
+            color: #42DB42;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .autosafe-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+        .autosafe-card {
+            background: #fff;
+            width: 350px;
+            margin: 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(66,219,66,0.10);
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        .autosafe-tab-group {
+            display: flex;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .autosafe-btn-customer,
+        .autosafe-btn-admin {
+            flex: 1;
+            padding: 12px 0;
+            border: none;
+            background: #fff;
+            color: #222;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .autosafe-btn-customer.active,
+        .autosafe-btn-admin.active {
+            background: #dfffe6;
+            color: #42DB42;
+        }
+        .autosafe-btn-customer:not(.active):hover,
+        .autosafe-btn-admin:not(.active):hover {
+            background: #f3fff6;
+        }
+        #login-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #222;
+        }
+        #login-desc {
+            color: #555;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+        .autosafe-form {
+            width: 100%;
+            max-width: 340px;
+            min-height: 150px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+            position: absolute;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .autosafe-form.active {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            z-index: 1;
+        }
+        .autosafe-form.fade-out {
+            opacity: 0;
+            transition: opacity 0.35s;
+            pointer-events: none;
+        }
+        .autosafe-form-container {
+            position: relative;
+            min-height: 180px;
+        }
+        .autosafe-form > div,
+        .autosafe-form > button {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        .btn-autosafe {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            padding: 12px;
+            margin-bottom: 14px;
+            border: 1px solid #e5e5e5;
+            border-radius: 7px;
+            font-size: 1rem;
+            background: #fafafa;
+            transition: border 0.2s;
+        }
+        input:focus {
+            border-color: #42DB42;
+            outline: none;
+        }
+        .btn-autosafe {
+            background: #42DB42;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+        }
+        .btn-autosafe:hover {
+            background: #36c836;
+        }
+        .autosafe-form-container > form > div:last-child {
+            text-align: center;
+            font-size: 0.98rem;
+        }
+        a {
+            color: #42DB42;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 0.97rem;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .animate-fade-in {
+            animation: fade-in 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes logo-pop {
+            0% { opacity: 0; transform: scale(0.7) translateY(-30px);}
+            80% { opacity: 1; transform: scale(1.1) translateY(5px);}
+            100% { opacity: 1; transform: scale(1) translateY(0);}
+        }
+        .animate-logo-pop {
+            animation: logo-pop 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes text-fade-in {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .animate-text-fade-in {
+            animation: text-fade-in 0.8s cubic-bezier(.4,0,.2,1);
+        }

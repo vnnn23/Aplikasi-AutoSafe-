@@ -1,0 +1,308 @@
+/* Complete replacement with profile page styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  color: #374151;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  padding: 20px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+  box-sizing: border-box;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.profile-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #22c55e;
+  background: #f3f4f6;
+}
+
+.profile-contact {
+  flex: 1;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.profile-contact .nama {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.profile-contact .email {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Statistics Section */
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 450px;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+  width: 100%;
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #374151;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.edit-profile-btn:active {
+  transform: translateY(0);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 40px;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 64px;
+  z-index: 100;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 0.25rem 1rem;
+}
+
+.nav-item.active {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.nav-item:hover:not(.active) {
+  color: #111827;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 0.2rem;
+}
+
+.nav-item span {
+  font-size: 0.85rem;
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-modal.show {
+  display: flex !important;
+}
+
+.custom-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  padding: 32px 24px 24px 24px;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+}
+
+.custom-modal-icon {
+  width: 56px;
+  height: 56px;
+  background: #ff4747;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.custom-modal-icon span {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.custom-modal-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.custom-modal-text {
+  font-size: 1rem;
+  color: #e53e3e;
+  margin-bottom: 24px;
+}
+
+.custom-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-cancel {
+  background: #e5e7eb;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-ok {
+  background: #ff4747;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .profile-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.input-login-style {
+  border: 1.5px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #f7f7fa;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+  margin-bottom: 12px;
+}
+.input-login-style:focus {
+  border-color: #6c63ff;
+  background: #fff;
+}

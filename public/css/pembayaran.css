@@ -1,0 +1,539 @@
+/* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+      background-color: #f7f6fb;
+      color: #39522f;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 100%;
+    }
+    a, button {
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+    }
+    /* Container */
+    .page {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 12px 15px 30px 15px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: white;
+      border-bottom: 1px solid #d1d5db;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+        #backBtn {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-right: 0.75rem;
+      color: inherit;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    #backBtn:hover {
+      color: #059669;
+    }
+
+    /* Alamat Penjemputan Container */
+    .pickup-address-container {
+      border: 1px solid #4ca72c;
+      border-radius: 10px;
+      background-color: #e7f0e2;
+      color: #39522f;
+      padding: 18px 24px 18px 18px;
+      margin-bottom: 36px;
+      user-select: none;
+      width: 100%;
+    }
+    /* Label heading with emoji */
+    .pickup-label {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #238207;
+    }
+    .pickup-label::before {
+      content: "📍";
+      font-size: 18px;
+      line-height: 18px;
+    }
+    /* Address text */
+    .pickup-address {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 6px;
+    }
+    .pickup-desc {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      opacity: 0.6;
+    }
+    /* Jadwal Jemput container */
+    .pickup-schedule {
+      margin-top: 14px;
+      background-color: #addb80;
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: #386401;
+      font-size: 13px;
+      user-select: none;
+      max-width: 450px;
+    }
+    .pickup-schedule-label {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pickup-schedule-label::before {
+      content: "🚚";
+      font-size: 16px;
+      line-height: 16px;
+      display: inline-block;
+    }
+    .pickup-schedule-time {
+      opacity: 0.6;
+      font-weight: 400;
+    }
+
+    /* Pilih Lokasi Penitipan heading */
+    .select-location-title {
+      font-weight: 500;
+      font-size: 16px;
+      color: #1b1b1b;
+      margin-bottom: 18px;
+      user-select: none;
+    }
+
+    /* Location cards container */
+    .locations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    /* Each location card */
+    .location-card {
+      border: 1.9px solid #dcd9da;
+      border-radius: 14px;
+      background-color: #fbfafc;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .location-card:hover {
+      box-shadow: 0 0 6px rgba(80, 200, 80, 0.3);
+    }
+
+    /* Left section - flex column */
+    .location-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Radio custom */
+    input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      border: 2.5px solid #ccc;
+      outline-offset: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+      background-clip: content-box;
+      background-color: #e6e6e9;
+      position: relative;
+      transition: border-color 0.25s ease, background-color 0.25s ease;
+    }
+    input[type="radio"]:checked {
+      border-color: #36b622;
+      background-color: #36b622;
+    }
+    input[type="radio"]:checked::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+    }
+    input[type="radio"]:focus-visible {
+      outline: 2px solid #36b622;
+      outline-offset: 2px;
+    }
+
+    /* Location info text */
+    .location-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+    .location-name {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #222;
+    }
+    .location-estimate {
+      font-size: 12.8px;
+      opacity: 0.7;
+      color: #222;
+    }
+
+    /* Right info container */
+    .location-right {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      min-width: 190px;
+    }
+
+    /* Pickup cost info */
+    .pickup-cost {
+      font-weight: 700;
+      font-size: 13.5px;
+      white-space: nowrap;
+      color: #222;
+    }
+    .pickup-cost-label {
+      font-weight: 400;
+      font-size: 11.6px;
+      opacity: 0.6;
+      white-space: nowrap;
+      text-align: right;
+      margin-bottom: 3px;
+    }
+
+    /* Status badge */
+    .status-badge {
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 6px 14px 5px 14px;
+      color: white;
+      user-select: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    /* Custom status colors */
+    .status-optimal {
+      background-color: #addb80;
+      color: #237700;
+    }
+    .status-baik {
+      background-color: #b6d7a8;
+      color: #3a7700;
+    }
+    .status-terbatas {
+      background-color: #f9cccb;
+      color: #a42323;
+    }
+
+    /* Location card selected border color */
+    .location-card.selected {
+      border-color: #36b622;
+      box-shadow: 0 0 6px rgba(54, 182, 34, 0.32);
+      background-color: #f5fdf1;
+    }
+
+    /* Buttons container */
+    .btns-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    /* Buttons common styles */
+    button {
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 26px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      flex: 1;
+    }
+    /* Kembali button */
+    button.btn-back {
+      background-color: #d2d2d2;
+      color: #252525;
+    }
+    button.btn-back:hover:not(:disabled) {
+      background-color: #b1b1b1;
+    }
+    /* Lanjutkan button */
+    button.btn-next {
+      background-color: #36b622;
+      color: white;
+    }
+    button.btn-next:hover:not(:disabled) {
+      background-color: #29981c;
+    }
+    /* Disabled button style */
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+        /* Visually hidden class for screen reader only */
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+      padding: 0;
+      margin: -1px;
+    }
+
+    /* Order Summary Styles */
+    .order-summary {
+      background: #eaf6e6;
+      border: 1.5px solid #36b622;
+      border-radius: 16px;
+      box-shadow: none;
+      padding: 28px 24px 20px 24px;
+      margin-bottom: 32px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      transition: box-shadow 0.2s;
+    }
+
+    .order-summary .title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #36b622;
+      margin-bottom: 14px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .order-summary .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .order-summary .service-name {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #36b622;
+      margin-bottom: 0;
+    }
+
+    .order-summary .service-type {
+      color: #36b622;
+      font-weight: 500;
+      font-size: 1.01rem;
+      margin-bottom: 0;
+      text-align: right;
+      word-break: break-word;
+      margin-left: 18px;
+    }
+
+    .order-summary .service-desc {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .order-summary .price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #36b622;
+      margin-bottom: 14px;
+      float: right;
+      margin-top: -140px;
+    }
+
+    .order-summary .details {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0 18px;
+    }
+
+    .order-summary .details .label {
+      font-weight: 400;
+      color: #36b622;
+      margin-top: 8px;
+      margin-bottom: 2px;
+      font-size: 0.98rem;
+      text-align: left;
+    }
+
+    .order-summary .details .value {
+      color: #222;
+      margin-bottom: 2px;
+      font-weight: 500;
+      word-break: break-word;
+      font-size: 1.01rem;
+      text-align: right;
+    }
+
+    /* Modal styles */
+    .custom-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.18);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-modal.show {
+      display: flex;
+    }
+
+    .custom-modal-content {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 32px 24px 24px 24px;
+      min-width: 340px;
+      max-width: 90vw;
+      text-align: center;
+      position: relative;
+    }
+
+    .custom-modal-icon {
+      width: 56px;
+      height: 56px;
+      background: #ff4747;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px auto;
+    }
+
+    .custom-modal-icon span {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .custom-modal-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .custom-modal-text {
+      font-size: 1rem;
+      color: #e53e3e;
+      margin-bottom: 24px;
+    }
+
+    .custom-modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn-cancel {
+      background: #e5e7eb;
+      color: #222;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 32px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn-ok {
+      background: #ff4747;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 32px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .order-summary {
+        padding: 16px 6px 10px 6px;
+        max-width: 100vw;
+        border-radius: 10px;
+      }
+      .order-summary .price {
+        float: none;
+        margin-top: 0;
+        text-align: right;
+        display: block;
+      }
+      .order-summary .details {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 0 8px;
+      }
+    }
+
+    /* Animasi fade-slide-in untuk halaman pembayaran */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}

@@ -1,0 +1,159 @@
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        body {
+            background: #f3fff6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+         .logo-bg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #42DB42;
+            border-radius: 50%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .autosafe-logo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 48px;
+            margin-bottom: 12px;
+            height: 100px;
+        }
+        .autosafe-logo img {
+            position: relative;
+            z-index: 1;
+        }
+        .autosafe-title {
+            text-align: center;
+            color: #42DB42;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .autosafe-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+        .autosafe-form-container {
+            background: #fff;
+            width: 350px;
+            height: 470px;
+            margin: 0 auto;
+            padding: 28px 28px 24px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(66,219,66,0.10);
+            margin-bottom: 32px;
+            position: relative;
+        }
+        .register-title {
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin-bottom: 2px;
+        }
+        .register-desc {
+            color: #888;
+            font-size: 0.97rem;
+            margin-bottom: 18px;
+        }
+        .form-label {
+            font-size: 0.97rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            margin-top: 10px;
+        }
+        .register-form {
+            width: 100%;
+            max-width: 340px;
+            min-height: 150px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .register-form > div,
+        .register-form > button {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        .btn-autosafe {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #e5e5e5;
+            border-radius: 7px;
+            font-size: 1rem;
+            background: #fafafa;
+            transition: border 0.2s;
+        }
+        input:focus {
+            border-color: #42DB42;
+            outline: none;
+        }
+        .btn-autosafe {
+            width: 100%;
+            background: #42DB42;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+        }
+        .btn-autosafe:hover {
+            background: #36c836;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 1rem;
+        }
+        .login-link a {
+            color: #42DB42;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: #e74c3c;
+            font-size: 0.97rem;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        input#password_confirmation {
+            margin-bottom: 18px;
+        }
+        input::placeholder {
+            font-size: 0.875rem;
+        }
